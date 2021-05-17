@@ -1,0 +1,20 @@
+<h1>Welcome</h1>
+<p>This is a list of our favourite restaurants</p>
+
+<h2>Add a restaurant</h2>
+<form method="post" action="restaurants">
+  <input type="text" name="name" placeholder="Type restaurant's name">
+  <input type="text" name="address" placeholder="Type restaurant's address">
+  <input type="submit" value="Add Restaurant">
+</form>
+
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %> / <%= restaurant.address %>
+      </a>
+    </li>
+  <% end %>
+</ul>
